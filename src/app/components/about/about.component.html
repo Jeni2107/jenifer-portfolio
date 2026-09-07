@@ -1,0 +1,35 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">About Me</span>
+      <h2 class="section-title">Professional Summary</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card card">
+        @for (paragraph of summaryParagraphs; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card card">
+          <span class="stat-number">{{ portfolio.stats.experience }}</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-card card">
+          <span class="stat-number">{{ portfolio.stats.projects }}</span>
+          <span class="stat-label">Major Projects</span>
+        </div>
+        <div class="stat-card card">
+          <span class="stat-number">{{ portfolio.stats.technologies }}</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+        <div class="stat-card card">
+          <span class="stat-number">UG</span>
+          <span class="stat-label">Rank Holder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

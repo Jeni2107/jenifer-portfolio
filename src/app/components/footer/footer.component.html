@@ -1,0 +1,11 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <p class="footer-text">
+      &copy; {{ year }} {{ portfolio.name }}. Built with Angular.
+    </p>
+    <div class="footer-links">
+      <a [href]="portfolio.linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a [href]="'mailto:' + portfolio.email">Email</a>
+    </div>
+  </div>
+</footer>

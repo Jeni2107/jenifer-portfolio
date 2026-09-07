@@ -1,0 +1,124 @@
+.experience {
+  background: var(--bg-secondary);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-marker {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-top: 1.75rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: calc(100% + 2rem);
+    background: var(--border);
+  }
+}
+
+.timeline-item:last-child .timeline-marker::before {
+  display: none;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.job-role {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.job-company {
+  color: var(--accent-light);
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.job-period {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg-primary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.job-highlights,
+.project-block ul {
+  list-style: none;
+  padding: 0;
+}
+
+.job-highlights li,
+.project-block li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  &::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+}
+
+.job-projects {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.project-block {
+  margin-bottom: 1.25rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.project-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-marker {
+    display: none;
+  }
+}

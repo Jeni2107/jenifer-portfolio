@@ -1,0 +1,34 @@
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="section-subtitle">
+        Open to collaborations and freelancing opportunities
+      </p>
+    </div>
+
+    <div class="freelance-banner card">
+      <div class="freelance-icon">💼</div>
+      <div>
+        <h3 class="freelance-title">Available for Freelancing</h3>
+        <p class="freelance-text">{{ portfolio.freelancingNote }}</p>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      @for (item of contactItems; track item.label) {
+        <a
+          [href]="item.href"
+          class="contact-card card"
+          [attr.target]="item.label === 'LinkedIn' ? '_blank' : null"
+          [attr.rel]="item.label === 'LinkedIn' ? 'noopener noreferrer' : null"
+        >
+          <span class="contact-icon">{{ item.icon }}</span>
+          <span class="contact-label">{{ item.label }}</span>
+          <span class="contact-value">{{ item.value }}</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>

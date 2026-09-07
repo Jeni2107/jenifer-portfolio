@@ -1,0 +1,20 @@
+<section id="certifications" class="certifications">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Certifications</span>
+      <h2 class="section-title">Professional Certifications</h2>
+      <p class="section-subtitle">Continuous learning and industry-recognized credentials</p>
+    </div>
+
+    <div class="cert-grid">
+      @for (cert of certifications; track cert.name) {
+        <div class="cert-card card">
+          <div class="cert-icon">🏅</div>
+          <h3 class="cert-name">{{ cert.name }}</h3>
+          <p class="cert-issuer">{{ cert.issuer }}</p>
+          <span class="cert-year">Issued {{ cert.issuedYear }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

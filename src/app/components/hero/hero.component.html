@@ -1,0 +1,47 @@
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">{{ portfolio.name }}</h1>
+      <h2 class="hero-title">{{ portfolio.title }}</h2>
+      <p class="hero-tagline">{{ portfolio.tagline }}</p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#experience" class="btn btn-outline">View Experience</a>
+      </div>
+
+      <div class="hero-links">
+        <a [href]="'mailto:' + portfolio.email" class="hero-link">
+          <span class="link-icon">✉</span> {{ portfolio.email }}
+        </a>
+        <a [href]="portfolio.linkedin" target="_blank" rel="noopener noreferrer" class="hero-link">
+          <span class="link-icon">in</span> LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="image-ring"></div>
+      <div class="image-glow"></div>
+      <img
+        [src]="portfolio.profileImage"
+        [alt]="portfolio.name + ' profile photo'"
+        class="hero-image"
+        width="320"
+        height="320"
+        (error)="onImageError($event)"
+      />
+      <div class="floating-badge badge-1">
+        <span class="badge-dot"></span> NestJS
+      </div>
+      <div class="floating-badge badge-2">
+        <span class="badge-dot"></span> Spring Boot
+      </div>
+      <div class="floating-badge badge-3">
+        <span class="badge-dot"></span> Angular
+      </div>
+    </div>
+  </div>
+</section>
