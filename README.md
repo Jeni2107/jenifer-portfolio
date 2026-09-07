@@ -121,75 +121,6 @@ Open: **http://localhost:8080**
 
 ---
 
-## Step 7: Deploy
-
-### Option A: Deploy to GitHub Pages (Free)
-
-1. **Initialize git and push to GitHub:**
-
-```bash
-git init
-git add .
-git commit -m "Initial portfolio commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/jenifer-portfolio.git
-git push -u origin main
-```
-
-2. **Install Angular GitHub Pages helper:**
-
-```bash
-npm install -g angular-cli-ghpages
-```
-
-3. **Build and deploy:**
-
-```bash
-ng build --base-href "https://YOUR_USERNAME.github.io/jenifer-portfolio/"
-npx angular-cli-ghpages --dir=dist/jenifer-portfolio/browser
-```
-
-4. In your GitHub repo: **Settings → Pages → Source: `gh-pages` branch**
-
-Your site will be live at: `https://YOUR_USERNAME.github.io/jenifer-portfolio/`
-
----
-
-### Option B: Deploy to Netlify (Free, Easiest)
-
-1. Push your code to GitHub (see Option A, step 1).
-2. Go to [https://netlify.com](https://netlify.com) and sign up.
-3. Click **Add new site → Import an existing project**.
-4. Connect your GitHub repo.
-5. Set build settings:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist/jenifer-portfolio/browser`
-6. Click **Deploy**.
-
-Netlify gives you a free URL like `https://your-site.netlify.app`.
-
----
-
-### Option C: Deploy to Vercel (Free)
-
-1. Push code to GitHub.
-2. Go to [https://vercel.com](https://vercel.com) and import your repo.
-3. Vercel auto-detects Angular. Set:
-   - **Output Directory:** `dist/jenifer-portfolio/browser`
-4. Click **Deploy**.
-
----
-
-### Option D: Deploy to AWS S3 + CloudFront
-
-1. Build the project: `npm run build`
-2. Create an S3 bucket with static website hosting enabled.
-3. Upload contents of `dist/jenifer-portfolio/browser/` to the bucket.
-4. Set bucket policy for public read access.
-5. (Optional) Add CloudFront CDN for HTTPS and faster delivery.
-
----
-
 ## Customizing Content
 
 All portfolio content is in one file:
@@ -228,19 +159,6 @@ jenifer-portfolio/
 ├── angular.json
 └── package.json
 ```
-
----
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| `ng: command not found` | Use `npx ng serve` instead of `ng serve` |
-| Port 4200 in use | Run `ng serve --port 4300` |
-| Photo not showing | Check file path in `portfolio.data.ts` and that the image is in `public/assets/images/` |
-| Build fails | Delete `node_modules` and run `npm install` again |
-
----
 
 ## Contact
 
